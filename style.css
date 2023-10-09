@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 110px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header > ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    list-style: none;
+}
+header a{
+    color: #183a31;
+    text-decoration: none;
+    padding: 8px 16px;
+
+    font-size: 18px;
+    border: thin solid transparent;
+    transition: .3s;
+}
+header .selected{
+    border: thin solid #45a88e;
+    border-radius: 10px;
+    background: rgba(69,168,142,1);
+    color: white;
+}
+header .selected:hover{
+    background: rgba(49,124,104,1);
+}
+header a:hover{
+    border: thin solid #45a88e;
+    border-radius: 10px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+
+    margin: 100px auto;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+}
+
+.quota-selector{
+    display: grid;
+    justify-content: center;
+    gap: 5px;
+
+    margin: 20px 0;
+}
+.quota-selector > label{
+    font-size: 18px;
+}
+.quota-selector > .select{
+    width: 300px;
+    height: 50px;
+
+    margin: 0 auto;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+    
+    background-color: transparent;
+    box-shadow: rgba(100, 111, 104, 0.5) 0px 7px 29px 0px;
+
+    display: grid;
+    grid-template-columns: auto 50px;
+}
+.quota-selector > .select > select{
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    text-align: center;
+
+    background-color: transparent;
+}
+.quota-selector > .select > div{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+}
+
+
+
+.quotas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.quota{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    padding: 25px;
+    border-radius: 15px;
+    background: rgb(69,168,142);
+    background: linear-gradient(142deg, rgba(69,168,142,1) 0%, rgb(67, 151, 129) 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.quota > .title{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.quota > .title > div > span{
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.quota > .title h1{
+    font-size: 35px;
+    line-height: 20px;
+}
+.quota > .title > h1 span{
+    font-size: 18px;
+}
+.quota > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.quota > div+div{
+    margin-top: 20px;
+}
+.quota > div > label{
+    font-size: 20px;
+    font-weight: 500;
+
+    display: flex;
+    gap: 10px;
+}
+.quota > div > input{
+    font-size: 18px;
+    padding: 8px 16px;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.off{
+    opacity: 0;
+}
