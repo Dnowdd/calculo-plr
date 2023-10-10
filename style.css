@@ -172,3 +172,41 @@ header a:hover{
 .off{
     opacity: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+.log{
+    width: 100%;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgb(69,168,142);
+    background: linear-gradient(142deg, rgba(69,168,142,1) 0%, rgb(67, 151, 129) 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.log > div{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+.log > div+div{
+    margin-top: 10px;
+}
+/* .log > .count{
+    
+} */
+.log > .result{
+    padding-top: 8px;
+    border-top: 1px solid black;
+}
