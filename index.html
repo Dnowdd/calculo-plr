@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cálculo de PLR</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -13,8 +13,8 @@
         <header>
             <ul>
                 <a href="" class="selected"><li>Cálculo de PLR</li></a>
-                <a href=""><li>Cálculo de salário</li></a>
-                <a href=""><li>Cálculo de férias</li></a>
+                <a class="soon"><li>Cálculo de salário</li></a>
+                <a class="soon"><li>Cálculo de férias</li></a>
             </ul>
         </header>
 
@@ -24,7 +24,7 @@
                     <div class="quota-selector">
                         <label for="">O <b>PLR</b> será distribuído em quantas <b>parcelas</b>?</label>
                         <div class="select">
-                            <select name="" id="quota-selector">
+                            <select onchange="calculatePLR()" name="" id="quota-selector">
                                 <option value="1">1 Parcela</option>
                                 <option value="2">2 Parcela</option>
                                 <option value="3">3 Parcela</option>
@@ -53,11 +53,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-1" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-1" type="text" id="salario-1" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-1" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-1" name="plr-1" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-2">
@@ -68,11 +68,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-2" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-2" type="text" id="salario-2" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-2" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-2" name="plr-2" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-3">
@@ -83,11 +83,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-3" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-3" type="text" id="salario-3" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-3" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-3" name="plr-3" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-4">
@@ -98,11 +98,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-4" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-4" type="text" id="salario-4" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-4" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-4" name="plr-4" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-5">
@@ -113,11 +113,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-5" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-5" type="text" id="salario-5" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-5" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-5" name="plr-5" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-6">
@@ -128,11 +128,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-6" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-6" type="text" id="salario-6" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-6" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-6" name="plr-6" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-7">
@@ -143,11 +143,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-7" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-7" type="text" id="salario-7" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-7" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-7" name="plr-7" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-8">
@@ -158,11 +158,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-8" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-8" type="text" id="salario-8" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-8" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-8" name="plr-8" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-9">
@@ -173,11 +173,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-9" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-9" type="text" id="salario-9" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-9" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-9" name="plr-9" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-10">
@@ -188,11 +188,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-10" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-10" type="text" id="salario-10" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-10" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-10" name="plr-10" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-11">
@@ -203,11 +203,11 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-11" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-11" type="text" id="salario-11" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-11" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-11" name="plr-11" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                         <div class="quota off" id="quota-12">
@@ -218,126 +218,212 @@
                             <br>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">payments</span>Digite o salário:</label>
-                                <input name="salario-12" type="text" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
+                                <input onkeyup="calculatePLR()" name="salario-12" type="text" id="salario-12" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?R$ " value="R$ 1 000,00" data-type="currency" placeholder="Qual o seu salário?">
                             </div>
                             <div>
                                 <label for=""><span class="material-symbols-outlined">receipt_long</span>Digite o valor do PLR:</label>
-                                <input name="plr-12" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
+                                <input onkeyup="calculatePLR()" id="plr-12" name="plr-12" placeholder="Qual o valor do PLR?" class="percent" type="text" value="50%" maxlength="6">
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
             <div>
-                <div class="log">
-                    <h1>Formula Utilizada</h1>
-                    <br>
-                    <div class="count">
-                        <b>Primeiro Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
+                <div class="rows">
+                    <div class="log">
+                        <h1>Formula Utilizada</h1>
+                        <br>
+                        <div class="" id="box-log-1">
+                            <div class="count">
+                                <b>Primeiro Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-1_salario">R$ 0,00</span> <b>*</b> <span id="box-log-1_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-1_total">R$ 0,00</p>
+                            </div>
+                        </div>
+    
+                        <div class="none" id="box-log-2">
+                            <div class="count">
+                                <b>Segundo Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-2_salario">R$ 0,00</span> <b>*</b> <span id="box-log-2_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-2_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-3">
+                            <div class="count">
+                                <b>Terceiro Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-3_salario">R$ 0,00</span> <b>*</b> <span id="box-log-3_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-3_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-4">
+                            <div class="count">
+                                <b>Quarto Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-4_salario">R$ 0,00</span> <b>*</b> <span id="box-log-4_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-4_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-5">
+                            <div class="count">
+                                <b>Quinto Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-5_salario">R$ 0,00</span> <b>*</b> <span id="box-log-5_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-5_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-6">
+                            <div class="count">
+                                <b>Sexto Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-6_salario">R$ 0,00</span> <b>*</b> <span id="box-log-6_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-6_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-7">
+                            <div class="count">
+                                <b>Sétimo Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-7_salario">R$ 0,00</span> <b>*</b> <span id="box-log-7_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-7_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-8">
+                            <div class="count">
+                                <b>Oitavo Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-8_salario">R$ 0,00</span> <b>*</b> <span id="box-log-8_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-8_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-9">
+                            <div class="count">
+                                <b>Nono Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-9_salario">R$ 0,00</span> <b>*</b> <span id="box-log-9_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-9_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-10">
+                            <div class="count">
+                                <b>Décimo Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-10_salario">R$ 0,00</span> <b>*</b> <span id="box-log-10_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-10_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-11">
+                            <div class="count">
+                                <b>Décimo Primeiro Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-11_salario">R$ 0,00</span> <b>*</b> <span id="box-log-11_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-11_total">R$ 0,00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="none" id="box-log-12">
+                            <div class="count">
+                                <b>Décimo Segundo Salário * PLR</b>
+                                <p><b>+</b> <span id="box-log-12_salario">R$ 0,00</span> <b>*</b> <span id="box-log-12_plr">0,5</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Total da parcela</b>
+                                <p id="box-log-12_total">R$ 0,00</p>
+                            </div>
+                        </div>
+    
+                        <div id="box-log-final">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="result">
+                                <b>Soma de todas parcelas</b>
+                                <p id="result-parcelas">R$ 0,00</p>
+                            </div>
+                            <div class="count">
+                                <b>Aplicação de Imposto</b>
+                                <p>- <span id="result-aliquota">0%</span></p>
+                            </div>
+                            <div class="result">
+                                <b>Resultado final do PLR</b>
+                                <p id="result-final">R$ 0,00</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
+                    <table>
+                        <tr>
+                            <th>Imposto sobre PLR</th>
+                            <th>Alíquota</th>
+                        </tr>
+                        <tr>
+                            <td>De R$ 0,00 a R$ 7 407,11</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>De R$ 7 407,12 a R$ 9 922,28</td>
+                            <td>7,5%</td>
+                        </tr>
+                        <tr>
+                            <td>De R$ 9 922,29 a R$ 13 167,00</td>
+                            <td>15,0%</td>
+                        </tr>
+                        <tr>
+                            <td>De R$ 13 167,01 a R$ 16 380,38</td>
+                            <td>22,5%</td>
+                        </tr>
+                        <tr>
+                            <td>Acima de 16 380,38</td>
+                            <td>27,5%</td>
+                        </tr>
+                    </table>
+                    <div class="about-plr">
+                        <h1>O que é PLR?</h1>
+                        <p>A Participação nos Lucros e Resultados (PLR) é um programa de incentivo financeiro adotado por algumas empresas para recompensar seus funcionários com base no desempenho financeiro e nos resultados da organização. A PLR é uma forma de compartilhar os lucros e resultados positivos da empresa com seus colaboradores como uma maneira de motivá-los, reconhecê-los e alinhar seus interesses com os da empresa.</p>
 
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
+                        <h2>Pontos-chave sobre a PLR:</h2>
+                        <ol>
+                            <li><strong>Critérios de Elegibilidade:</strong> Nem todos os funcionários podem ser elegíveis para receber PLR. Geralmente, a elegibilidade é baseada em critérios definidos pela empresa, como tempo de serviço, posição, categoria de funcionário, etc.</li>
+                            <li><strong>Fórmula de Cálculo:</strong> A forma como a PLR é calculada pode variar de empresa para empresa. Alguns programas usam uma porcentagem dos lucros líquidos, enquanto outros podem usar métricas de desempenho específicas, como metas de vendas, produção ou qualidade.</li>
+                            <li><strong>Período de Pagamento:</strong> A frequência e o momento dos pagamentos da PLR também podem variar. Alguns programas fazem pagamentos anuais, enquanto outros podem fazê-los trimestralmente ou em outros intervalos.</li>
+                            <li><strong>Impostos:</strong> Em muitos países, os pagamentos de PLR estão sujeitos a impostos, e as regras fiscais podem variar. Os valores pagos geralmente são tributados como renda para o funcionário.</li>
+                            <li><strong>Acordo Formal:</strong> A maioria das empresas estabelece um acordo formal ou um plano de PLR que detalha os critérios, fórmulas de cálculo, elegibilidade e outros aspectos do programa. Isso ajuda a evitar mal-entendidos e litígios.</li>
+                        </ol>
 
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
-                    </div>
-
-                    <div class="count">
-                        <b>Segundo Salário * PLR</b>
-                        <p><b>+</b> R$ 1 500,00 <b>*</b> 0,5</p>
-                    </div>
-                    <div class="result">
-                        <b>Total</b>
-                        <p>R$ 750,00</p>
+                        <p>A PLR é benéfica para as empresas, pois pode motivar os funcionários a melhorar o desempenho e alcançar metas específicas. Também é vantajosa para os funcionários, uma vez que lhes dá a oportunidade de receber um bônus com base em seu trabalho e contribuições para a empresa. No entanto, a eficácia da PLR pode variar dependendo de como o programa é projetado e implementado. Além disso, é importante considerar os aspectos legais e fiscais relacionados à PLR em seu país.</p>
                     </div>
                 </div>
             </div>
