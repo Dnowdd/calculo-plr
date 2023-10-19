@@ -190,5 +190,6 @@ function calculatePLR(){
 
   value_final_imposto = value_final * ((100 - getAliquota(value_final))/100);
   $('#result-final').html(intCurrencyToVal(value_final_imposto));
+  $('#result-final2').html(intCurrencyToVal(value_final_imposto));
 }
 
